@@ -6,7 +6,7 @@
 ## Demo
 
 <p align="center">
-<img src="https://github.com/drahun/kurs-2/raw/master/public/kurs-2.jpg">
+<img src="https://github.com/drahun/kurs-2/raw/dz-0/public/kurs-2.jpg">
 </p>
 
 
