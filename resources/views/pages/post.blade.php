@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-xs-12  col-sm-8">
                                 <div class="meta__info">
-                                    <span class="meta__date"><span class="glyphicon glyphicon-calendar"></span> &nbsp; {{ $post->created_at }}</span>
+                                    <span class="meta__date"><span class="glyphicon glyphicon-calendar"></span> &nbsp; {{ getRusDate($post->created_at) }}</span>
                                 </div>
                             </div>
                             <div class="col-xs-12  col-sm-4">
