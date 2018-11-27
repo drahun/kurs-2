@@ -3,29 +3,12 @@
 
 > Это учебный пакет для работы c Laravel
 
-## Demo
 
 <p align="center">
 <img src="https://github.com/drahun/kurs-2/raw/dz-0/public/kurs-2.jpg">
 </p>
 
-
-### Frontend
-
-
-### Backend
-
-#### Underlying layer
-
-
-#### Features included
-
-
 ### Localization & SEO
-
-
-### Developer Specific
-
 
 ## Install
 
@@ -60,38 +43,17 @@ php artisan migrate --force
 Устновим openserver, composer, git
 - скачиваем composer
 - устанавливаем git
-- Добавляем в переменые среды пути к версии php
-- 
+
 
 ```
-Note....
+Note: Добавляем в переменые среды пути к версии php
 ```
 
-Than you can proceed with `Mac and Linux` install instructions section
-
-### Backend access
-
-The first user to register will be automatically super admin with no restriction and will cannot be deletable.
-Both frontend and backend have dedicated login pages.
-
-## Development notes
-
-
-
-### Permissions definitions
-
-
-### Note on Laravel Mix
-
-
-### Code styling
-
-PHP-CS-Fixer & ESLint are used for strong style guidelines for both server and client side code.
 
 
 ## TODO
 
-* [ ] Inclusion of unit/featured/browser tests (stand by for now)
+* [ ] Я не против доработки SEO или функционала...
 
 ## License
 

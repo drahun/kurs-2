@@ -1,43 +1,50 @@
 <?php
+
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use App\Category;
 use App\Post;
-use App\Comment;
 use App\Tag;
+use Illuminate\Http\Request;
+use App\Comment;
 class PostController extends Controller{
+
     public function index(){
+/*
+        // ВСЕ ПОСТЫ ИЗ ЭТОЙ КАТЕГОРИИ
+            $category = Category::where('id',2)->firstOrFail();
+            $posts = $category->posts();
+            dump($posts);
+*/
+/*
+            $tags = Tag::where('id',2)->firstOrFail();
+            $posts = $tags->posts();
+            dump($posts);
+*/
+/*
+        $com = Comment::where('id',2)->firstOrFail();
+        $posts = $com->posts();
+        dump($posts);
+        debug($posts);
+*//*
+        $post = Post::where('id',10)->firstOrFail();
+        $posts = $post->comments();
+        dump($posts);
+        debug($posts);
+*/
+        $posts = Post::all();
+        $page ='pages.all';
 
-        $posts = Post::paginate(2);
-        $page = 'pages.post';
-       // dd($post);
-        return view('two-content',compact('posts','page'));
-    }
-    public function create(){
-        //
-    }
-    public function store(Request $request){
-        //
-    }
-    public function show($id){
-        //
-    }
-    public function edit($id){
-        //
-    }
-    public function update(Request $request, $id)
-    {
-        //
-    }
-    public function destroy($id){
-        //
+
+        return view('layouts.two-column',
+            compact('posts','title','page'));
+
     }
 
-    /////////////////////////////////////
-    public function tags(){
-        return $this->belongsToMany(Tag::class)->withTimestamps();
-    }
+    public function show($slug){
+        $post = Post::where('slug',$slug)->firstOrFail();
 
-    public function comments(){
-        return $this->hasMany(Comment::class);
+        $page ='pages.post';
+        return view('layouts.two-column',
+            compact('post','title','page'));
     }
 }

@@ -1,35 +1,26 @@
 <?php
 
+
 use Illuminate\Database\Seeder;
-use App\Models\Tag;
+use App\Tag;
 
-class TagsTableSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+class TagsTableSeeder extends Seeder{
+    public function run(){
         Tag::create([
-            'name' => 'UX/UXI'
+            'name' => 'html'
         ]);
-
         Tag::create([
-            'name' => 'Разработка'
+            'name' => 'php'
         ]);
-
         Tag::create([
-            'name' => 'Квесты'
+            'name' => 'javascrpt'
         ]);
-
         Tag::create([
-            'name' => 'Из жизни'
+            'name' => 'laravel'
         ]);
-
         Tag::create([
-            'name' => 'Обо всем'
+            'name' => 'css'
         ]);
     }
 }
+

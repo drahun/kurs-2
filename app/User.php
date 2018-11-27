@@ -1,18 +1,18 @@
 <?php
 
 namespace App;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable{
-    use Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+class User extends Model
+{
+    // связи
+    public function posts(){
+        // один user может создавать множество статей
+        return $this->hasMany(Post::class);
+    }
+    public function comments(){
+        // один user может создавать множество коментов
+        return $this->hasMany(Comment::class);
+    }
 }

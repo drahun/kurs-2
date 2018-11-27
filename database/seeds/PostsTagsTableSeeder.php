@@ -1,17 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Post;
-
-class PostsTagsTableSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+use App\Post;
+class PostsTagsTableSeeder extends Seeder{
+    public function run(){
         Post::find(1)->tags()->attach([1,2]);
         Post::find(2)->tags()->attach([2,3]);
         Post::find(3)->tags()->attach([3,4]);

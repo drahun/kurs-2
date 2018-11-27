@@ -1,21 +1,20 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Post;
-use App\User;
-
-class Comment extends Model
-{
+class Comment extends Model{
     protected $guarded = ['id', 'created_at', 'updated_at'];
-
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
+    public function index(){
+        $comment= Comment::all();
+    }
+    public function posts(){// комментарий принадлежит некому Посту
+        return $this->belongsTo('App\Post');
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
+    public function user(){// комментарий принадлежит Автору
+        return $this->belongsTo('App\User');
     }
+
 }
