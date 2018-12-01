@@ -21,3 +21,7 @@ Route::get('/awesome','TestController@awesomeMethod');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/post', 'PostController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

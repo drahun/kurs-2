@@ -1,11 +1,15 @@
 <?php
 
 namespace App;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Illuminate\Database\Eloquent\Model;
-
-class User extends Model
+class User extends Authenticatable
 {
+    use Notifiable;
+    protected $hidden = ['password', 'remember_token',];
+    protected $guarded = ['id','created_at','updated_at'];
     // связи
     public function posts(){
         // один user может создавать множество статей
